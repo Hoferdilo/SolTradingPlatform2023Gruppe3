@@ -15,3 +15,11 @@
     ports:
       - "7000:80"
       - "7001:443"
+  productService:
+    image: productservice
+    build:
+      context: .
+      dockerfile: ProductService/Dockerfile
+    ports:
+      - "7004:80"
+      - "7005:443"
