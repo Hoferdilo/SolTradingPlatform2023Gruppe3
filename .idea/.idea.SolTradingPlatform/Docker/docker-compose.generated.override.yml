@@ -1,0 +1,40 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  iegeasycreditcardservice:
+    build:
+      context: "/home/hoferdilo/FH/elektrgp/SolTradingPlatform2023Gruppe3"
+      dockerfile: "IEGEasyCreditcardService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/IEGEasyCreditcardService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "https://+:443;http://+:80"
+    image: "iegeasycreditcardservice:dev"
+    ports: []
+    volumes:
+    - "/home/hoferdilo/.aspnet/https:/root/.aspnet/https"
+    - "/home/hoferdilo/.microsoft/usersecrets:/root/.microsoft/usersecrets"
+    - "/home/hoferdilo/FH/elektrgp/SolTradingPlatform2023Gruppe3/IEGEasyCreditcardService:/app:rw"
+    working_dir: "/app"
+  meiShopService:
+    build:
+      context: "/home/hoferdilo/FH/elektrgp/SolTradingPlatform2023Gruppe3"
+      dockerfile: "MeiShop/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/MeiShop.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "https://+:443;http://+:80"
+    image: "meishopservice:dev"
+    ports: []
+    volumes:
+    - "/home/hoferdilo/.aspnet/https:/root/.aspnet/https"
+    - "/home/hoferdilo/.microsoft/usersecrets:/root/.microsoft/usersecrets"
+    - "/home/hoferdilo/FH/elektrgp/SolTradingPlatform2023Gruppe3/MeiShop:/app:rw"
+    working_dir: "/app"
