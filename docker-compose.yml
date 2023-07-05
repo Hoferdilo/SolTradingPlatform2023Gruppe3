@@ -3,6 +3,7 @@ version: "3.4"
 services:
   iegeasycreditcardservice:
     image: iegeasycreditcardservice
+    restart: always
     build:
       context: .
       dockerfile: IEGEasyCreditcardService/Dockerfile
@@ -11,6 +12,7 @@ services:
       - "7003:443"
   meiShopService:
     image: meishopservice
+    restart: always
     build:
       context: .
       dockerfile: MeiShop/Dockerfile
@@ -19,6 +21,7 @@ services:
       - "7001:443"
   productService:
     image: productservice
+    restart: always
     build:
       context: .
       dockerfile: ProductService/Dockerfile
@@ -27,6 +30,7 @@ services:
       - "7005:443"
   productFTPService:
     image: productservice
+    restart: always
     build:
       context: .
       dockerfile: ProductFtpService/Dockerfile
