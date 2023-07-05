@@ -4,7 +4,11 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "iegeasycreditcardservice": "StartDebugging"
+        "iegeasycreditcardservice": "StartDebugging",
+        "consul": "StartWithoutDebugging",
+        "meiShopService": "StartDebugging",
+        "productFTPService": "StartDebugging",
+        "productService": "StartDebugging"
       }
     }
   }

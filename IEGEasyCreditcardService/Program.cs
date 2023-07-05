@@ -7,7 +7,7 @@ namespace IEGEasyCreditcardService;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         Log.Logger = BuilderExtensions.GetSerilog();
             
@@ -16,11 +16,11 @@ public class Program
         AddServices(builder);
 
         var app = builder.Build();
-        app.UseDefaults();
+        await app.UseDefaults("IEGEasyCreditcardService");
         app.UseHttpsRedirection();
         app.UseAuthorization();
         app.MapControllers();
-        app.Run();
+        await app.RunAsync();
     }
 
     public static void AddServices(WebApplicationBuilder builder)

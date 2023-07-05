@@ -20,6 +20,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductFtpService", "Produc
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0B4ED3D7-0951-4A83-BC20-261BC7D7404D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Res", "Res", "{F7DBBE03-466C-4CCF-BD8C-E0069E5F1AE2}"
+	ProjectSection(SolutionItems) = preProject
+		service.json = service.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

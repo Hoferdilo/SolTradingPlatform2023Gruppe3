@@ -1,4 +1,5 @@
 # This is a generated file. Not intended for manual editing.
+version: "3.4"
 services:
   iegeasycreditcardservice:
     build:
@@ -18,8 +19,8 @@ services:
       RESHARPER_LOG_CONF: "/riderLogsConf/backend-log.xml"
     image: "iegeasycreditcardservice:dev"
     ports:
-    - "57000:57100"
-    - "57200:57300"
+    - "57008:57100"
+    - "57208:57300"
     volumes:
     - "C:\\Users\\Hofer Julian\\Documents\\FH\\solTrading\\SolTradingPlatform2023Gruppe3\\\
       IEGEasyCreditcardService:/app:rw"
@@ -27,7 +28,7 @@ services:
       Linux64:/riderDebugger"
     - "C:\\Program Files\\JetBrains\\JetBrains Rider 2022.2.4/bin:/riderLogsConf"
     - "C:\\Users\\Hofer Julian\\AppData\\Local\\JetBrains\\Rider2023.1\\log\\DebuggerWorker\\\
-      JetBrains.Debugger.Worker.2023_7_05_19_38_33:/riderLogs:rw"
+      JetBrains.Debugger.Worker.2023_7_05_20_13_16:/riderLogs:rw"
     working_dir: "/app"
   meiShopService:
     build:
@@ -47,8 +48,8 @@ services:
       RESHARPER_LOG_CONF: "/riderLogsConf/backend-log.xml"
     image: "meishopservice:dev"
     ports:
-    - "57001:57100"
-    - "57201:57300"
+    - "57009:57100"
+    - "57209:57300"
     volumes:
     - "C:\\Users\\Hofer Julian\\Documents\\FH\\solTrading\\SolTradingPlatform2023Gruppe3\\\
       MeiShop:/app:rw"
@@ -56,7 +57,7 @@ services:
       Linux64:/riderDebugger"
     - "C:\\Program Files\\JetBrains\\JetBrains Rider 2022.2.4/bin:/riderLogsConf"
     - "C:\\Users\\Hofer Julian\\AppData\\Local\\JetBrains\\Rider2023.1\\log\\DebuggerWorker\\\
-      JetBrains.Debugger.Worker.2023_7_05_19_38_33:/riderLogs:rw"
+      JetBrains.Debugger.Worker.2023_7_05_20_13_16:/riderLogs:rw"
     working_dir: "/app"
   productFTPService:
     build:
@@ -76,8 +77,8 @@ services:
       RESHARPER_LOG_CONF: "/riderLogsConf/backend-log.xml"
     image: "productservice:dev"
     ports:
-    - "57002:57100"
-    - "57202:57300"
+    - "57010:57100"
+    - "57210:57300"
     volumes:
     - "C:\\Users\\Hofer Julian\\Documents\\FH\\solTrading\\SolTradingPlatform2023Gruppe3\\\
       ProductFtpService:/app:rw"
@@ -85,7 +86,7 @@ services:
       Linux64:/riderDebugger"
     - "C:\\Program Files\\JetBrains\\JetBrains Rider 2022.2.4/bin:/riderLogsConf"
     - "C:\\Users\\Hofer Julian\\AppData\\Local\\JetBrains\\Rider2023.1\\log\\DebuggerWorker\\\
-      JetBrains.Debugger.Worker.2023_7_05_19_38_33:/riderLogs:rw"
+      JetBrains.Debugger.Worker.2023_7_05_20_13_16:/riderLogs:rw"
     working_dir: "/app"
   productService:
     build:
@@ -105,8 +106,8 @@ services:
       RESHARPER_LOG_CONF: "/riderLogsConf/backend-log.xml"
     image: "productservice:dev"
     ports:
-    - "57003:57100"
-    - "57203:57300"
+    - "57011:57100"
+    - "57211:57300"
     volumes:
     - "C:\\Users\\Hofer Julian\\Documents\\FH\\solTrading\\SolTradingPlatform2023Gruppe3\\\
       ProductService:/app:rw"
@@ -114,5 +115,5 @@ services:
       Linux64:/riderDebugger"
     - "C:\\Program Files\\JetBrains\\JetBrains Rider 2022.2.4/bin:/riderLogsConf"
     - "C:\\Users\\Hofer Julian\\AppData\\Local\\JetBrains\\Rider2023.1\\log\\DebuggerWorker\\\
-      JetBrains.Debugger.Worker.2023_7_05_19_38_33:/riderLogs:rw"
+      JetBrains.Debugger.Worker.2023_7_05_20_13_16:/riderLogs:rw"
     working_dir: "/app"

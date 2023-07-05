@@ -6,7 +6,7 @@ namespace MeiShop;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         Log.Logger = BuilderExtensions.GetSerilog();
             
@@ -18,10 +18,10 @@ public class Program
         builder.Services.AddHttpClient();
 
         var app = builder.Build();
-        app.UseDefaults();
+        await app.UseDefaults("MeiShop");
 
         app.MapControllers();
 
-        app.Run();
+        await app.RunAsync();
     }
 }
