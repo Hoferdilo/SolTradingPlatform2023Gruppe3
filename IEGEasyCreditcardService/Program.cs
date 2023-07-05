@@ -14,6 +14,8 @@ namespace IEGEasyCreditcardService
 
             var app = builder.Build();
             app.UseDefaults();
+            app.UseHttpsRedirection();
+            app.UseAuthorization();
             app.MapControllers();
             app.Run();
         }

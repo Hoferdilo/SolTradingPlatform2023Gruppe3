@@ -12,6 +12,7 @@ namespace MeiShop
             // Add services to the container.
 
             builder.AddDefaults();
+            builder.Services.AddHttpClient();
 
             var app = builder.Build();
             app.UseDefaults();

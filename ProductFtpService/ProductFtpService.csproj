@@ -5,12 +5,8 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-        <UserSecretsId>51c30bd1-b52b-49ef-b0cb-b68491ae7ef3</UserSecretsId>
+        <UserSecretsId>98aeaee7-3d86-41f9-82ca-1807211312bf</UserSecretsId>
     </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
-    </ItemGroup>
 
     <ItemGroup>
       <Content Include="..\.dockerignore">

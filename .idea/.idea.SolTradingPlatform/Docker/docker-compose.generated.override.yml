@@ -38,3 +38,41 @@ services:
     - "/home/hoferdilo/.microsoft/usersecrets:/root/.microsoft/usersecrets"
     - "/home/hoferdilo/FH/elektrgp/SolTradingPlatform2023Gruppe3/MeiShop:/app:rw"
     working_dir: "/app"
+  productFTPService:
+    build:
+      context: "/home/hoferdilo/FH/elektrgp/SolTradingPlatform2023Gruppe3"
+      dockerfile: "ProductFtpService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/ProductFtpService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "https://+:443;http://+:80"
+    image: "productservice:dev"
+    ports: []
+    volumes:
+    - "/home/hoferdilo/.aspnet/https:/root/.aspnet/https"
+    - "/home/hoferdilo/.microsoft/usersecrets:/root/.microsoft/usersecrets"
+    - "/home/hoferdilo/FH/elektrgp/SolTradingPlatform2023Gruppe3/ProductFtpService:/app:rw"
+    working_dir: "/app"
+  productService:
+    build:
+      context: "/home/hoferdilo/FH/elektrgp/SolTradingPlatform2023Gruppe3"
+      dockerfile: "ProductService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/ProductService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "https://+:443;http://+:80"
+    image: "productservice:dev"
+    ports: []
+    volumes:
+    - "/home/hoferdilo/.aspnet/https:/root/.aspnet/https"
+    - "/home/hoferdilo/.microsoft/usersecrets:/root/.microsoft/usersecrets"
+    - "/home/hoferdilo/FH/elektrgp/SolTradingPlatform2023Gruppe3/ProductService:/app:rw"
+    working_dir: "/app"
