@@ -1,10 +1,19 @@
 using Common.Services.Startup;
+using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
-builder.AddDefaults();
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Log.Logger = BuilderExtensions.GetSerilog();
 
-var app = builder.Build();
-app.UseDefaults();
-app.MapControllers();
+        var builder = WebApplication.CreateBuilder(args);
+        builder.AddDefaults();
 
-app.Run();
+        var app = builder.Build();
+        app.UseDefaults();
+        app.MapControllers();
+
+        app.Run();
+    }
+}

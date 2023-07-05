@@ -1,4 +1,6 @@
-﻿services:
+version: "3.4"
+
+services:
   iegeasycreditcardservice:
     image: iegeasycreditcardservice
     build:

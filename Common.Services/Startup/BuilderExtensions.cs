@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace Common.Services.Startup;
 
 public static class BuilderExtensions
 {
+    public static ILogger GetSerilog()
+    {
+        return new LoggerConfiguration()
+            .WriteTo.Console()
+            .CreateLogger();
+    }
+    
     public static WebApplicationBuilder AddDefaults(this WebApplicationBuilder builder)
     {
         builder.Services.AddControllers();
@@ -19,8 +27,6 @@ public static class BuilderExtensions
     {
         app.UseSwagger();
         app.UseSwaggerUI();
-
-        app.UseHttpsRedirection();
 
         app.UseAuthorization();
 
