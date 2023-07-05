@@ -1,4 +1,5 @@
 using Common.Services.Startup;
+using Consul;
 using Serilog;
 
 
@@ -14,6 +15,13 @@ public class Program
         var app = builder.Build();
         await app.UseDefaults("ProductService");
         app.MapControllers();
+
+        var consulClient = app.Services.GetService<IConsulClient>();
+
+        await consulClient.KV.Put(new KVPair("productAccessKey")
+        {
+            Value = Guid.NewGuid().ToByteArray(),
+        });
 
         await app.RunAsync();
     }

@@ -1,6 +1,7 @@
 ﻿using Consul;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace MeiShop.Controllers
 {
@@ -20,16 +21,25 @@ namespace MeiShop.Controllers
         {
             var resultList = new List<string>();
             var resultServices = await _consulClient.Agent.Services();
+            var key = await _consulClient.KV.Get("productAccessKey");
+            var id = new Guid(key.Response.Value);
             var productApis = resultServices.Response.Values.Where(x => x.Service == "ProductService")
                 .Select(x => x.Address);
             var client = _clientFactory.CreateClient();
             foreach (var productApi in productApis)
             {
-                var result = await client.GetAsync($"http://{productApi}/api/Product");
-                var content = await result.Content.ReadFromJsonAsync<string[]>();
-                if (content != null)
+                try
                 {
-                    resultList.AddRange((content).ToList());
+                    var result = await client.GetAsync($"http://{productApi}/api/Product?auth={id}");
+                    var content = await result.Content.ReadFromJsonAsync<string[]>();
+                    if (content != null)
+                    {
+                        resultList.AddRange((content).ToList());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Warning($"Could not connect to {productApi}", ex);
                 }
             }
 
